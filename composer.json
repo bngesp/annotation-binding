@@ -1,0 +1,19 @@
+{
+    "name": "bngesp/annonation-binding",
+    "description": "php attribut annotation bindind",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Bngesp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "bassirou ngom",
+            "email": "bassiroungom@esp.sn"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
