@@ -1,6 +1,6 @@
 <?php
-namespace Bngesp\Annotation;
+namespace Bngesp\Lombok\Annotation\Base;
 
-class AbstractAnnotation {
-    
-}
+// Abstract function for annotation
+
+class AbstractAnnotation 
