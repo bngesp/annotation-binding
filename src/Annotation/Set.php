@@ -1,4 +1,4 @@
 <?php
-namespace Bngesp\Annotation;
+namespace Bngesp\Lombok\Annotation;
 
 class Set extends AbstractAnnotation{}
