@@ -2,10 +2,10 @@
 
 namespace Bngesp\Lombok\Test\Annotation;
 
-use Bngesp\Lombok\Annotation\Post;
+use Bngesp\Lombok\Annotation\Set;
 
-#[Post('test')]
-class PostTest
+#[Set('test')]
+class SetTest
 {
     private string $test = 'test';
 
