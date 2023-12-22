@@ -1,52 +1,39 @@
 <?php
 // first file to test with phpunit
 namespace Bngesp\Lombok\Test;
+use PHPUnit\Framework\TestCase;
+use Bngesp\Lombok\Processor;
 
-use Bngesp\Lombok\Annotation\Get;
-use Bngesp\Lombok\Annotation\ToString;
-
-#[Get('test')]
-#[ToString(['test'])]
-
-class FirstTest
+class FirstTest extends TestCase
 {
     private string $test = 'test';
+    private GetTest $getTest;
 
-    public function getTest(): string
+    public function testGetTest(): void
     {
-        return $this->test;
+        $this->assertEquals('test', $this->test);
     }
+
+    public function testGet(): void
+    {
+        $processor = new Processor();
+        $this->getTest = $processor->process(GetTest::class);
+        $this->assertTrue(method_exists($this->getTest, 'getNom'));
+        $this->assertTrue(method_exists($this->getTest, 'getPrenom'));
+        $this->assertTrue(method_exists($this->getTest, 'getAge'));
+        
+    }
+
+
+
 }
 
-// Path: test/FirstTest.php
-// Compare this snippet from test/Annotation/GetTest.php:
-// <?php
-// namespace Bngesp\Lombok\Test\Annotation;
-//
-// use Bngesp\Lombok\Annotation\Get;
-//
-// #[Get('test')]
-// class GetTest
-// {
-//     private string $test = 'test';
+#[Get]
+#[ToString]
+class GetTest
+{
+    private String $nom;
+    private String $prenom;
+    private int $age;
 
-//     public function getTest(): string
-//     {
-//         return $this->test;
-//     }
-// }
-
-// Path: test/Annotation/ToStringTest.php
-
-// Compare this snippet from test/Annotation/ToStringTest.php:
-
-// <?php
-// namespace Bngesp\Lombok\Test\Annotation;
-//
-// use Bngesp\Lombok\Annotation\ToString;
-//
-// #[ToString(['test'])]
-// class ToStringTest
-// {
-//     private string $test = 'test';
-// }
+}
