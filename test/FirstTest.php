@@ -1,5 +1,5 @@
 <?php
-// first file to test with phpunit
+
 namespace Bngesp\Lombok\Test;
 use PHPUnit\Framework\TestCase;
 use Bngesp\Lombok\Processor\Processor;
@@ -30,7 +30,6 @@ class FirstTest extends TestCase
 
 
 }
-
 #[Get]
 #[ToString]
 class GetTest
@@ -39,5 +38,4 @@ class GetTest
     private String $nom;
     private String $prenom;
     private int $age;
-
 }
