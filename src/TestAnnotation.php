@@ -42,9 +42,5 @@ echo $testAnnotation->getAge() . PHP_EOL;
 echo $testAnnotation . PHP_EOL;
 $clone = clone $testAnnotation;
 echo $clone . PHP_EOL;
-
-// Output:
-// Bngesp
-// 18
-// Bngesp 18
-// Bngesp 18
+$testAnnotation->setName('Bngesp2');
+echo $testAnnotation . PHP_EOL;
