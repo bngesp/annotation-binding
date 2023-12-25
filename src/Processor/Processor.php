@@ -23,23 +23,20 @@ trait Processor
 
     public static function getMethod(object $object, string $property, string $method)
     {
-        match($method) 
+        match($method)
         {
-            Method::GET => function() use ($property){
-                return $this->$property;
-            },
             Method::SET => function($value) use ($property){
                 $this->$property = $value;
             },
             Method::TO_STRING => function() use ($object){
-                return \Bngesp\Lombok\Processor\Processor::toString($object);
+                return self::toString($object);
             },
 
             default => function() use ($property){
                 return $this->$property;
             }
         };
-        
+
     }
 
     public static function getProperties(object $object)

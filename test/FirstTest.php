@@ -18,9 +18,8 @@ class FirstTest extends TestCase
 
     public function testGet(): void
     {
-        $processor = new Processor();
         $this->getTest = new GetTest();
-        $this->getTest = $processor->process(GetTest::class);
+        $el= $this->getTest->process(GetTest::class);
         $this->assertTrue(method_exists($this->getTest, 'getNom'));
         $this->assertTrue(method_exists($this->getTest, 'getPrenom'));
         $this->assertTrue(method_exists($this->getTest, 'getAge'));
