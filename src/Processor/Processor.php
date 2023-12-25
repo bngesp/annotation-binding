@@ -136,4 +136,5 @@ trait Processor
         }
         return $string;
     }
+
 }
