@@ -1,6 +1,6 @@
 <?php
 
-namespace Bngesp\Lombok\Annotations;
+namespace Bngesp\Lombok\Annotation;
 
 enum Method
 {
