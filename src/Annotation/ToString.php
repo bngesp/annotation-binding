@@ -1,6 +1,8 @@
 <?php
 namespace Bngesp\Lombok\Annotation;
 
+use Bngesp\Lombok\Annotation\Base\AbstractAnnotation;
+
 #[\Attribute(\Attribute::TARGET_CLASS|\Attribute::TARGET_PROPERTY)]
 class ToString extends AbstractAnnotation{
     public function process(object $object){
