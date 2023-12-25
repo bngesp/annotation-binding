@@ -1,4 +1,8 @@
 <?php
 namespace Bngesp\Lombok\Annotation;
 
-class Builder extends AbstractAnnotation{}
+use Bngesp\Lombok\Annotation\Base\AbstractAnnotation;
+
+class Builder extends AbstractAnnotation{
+
+}

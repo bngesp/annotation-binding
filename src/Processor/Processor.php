@@ -1,7 +1,8 @@
 <?php
 namespace Bngesp\Lombok\Processor;
 
-use Bngesp\Lombok\Annotation\Method;
+
+use Bngesp\Lombok\Annotations\Method;
 
 trait Processor
 {
@@ -16,7 +17,7 @@ trait Processor
     {
         $methodName = $method . ucfirst($property);
         if(!method_exists($object, $methodName)){
-            $object->$methodName = self::getMethod($object, $property, $method);
+            $object->$methodName = static::getMethod($object, $property, $method);
         }
     }
 

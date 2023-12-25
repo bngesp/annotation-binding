@@ -3,7 +3,9 @@ namespace Bngesp\Lombok\Annotation\Base;
 
 // Abstract function for annotation
 
-#[\Attribute(\Attribute::TARGET_CLASS|\Attribute::TARGET_PROPERTY)]
+use Attribute;
+
+#[Attribute(Attribute::TARGET_CLASS|Attribute::TARGET_PROPERTY)]
 class AbstractAnnotation 
 {
     protected $name;
