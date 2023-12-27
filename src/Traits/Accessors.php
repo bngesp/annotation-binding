@@ -1,5 +1,6 @@
 <?php
-namespace Bngesp\Lombok\Annotation;
+namespace Bngesp\Lombok\Traits;
+
 
 trait Accessors
 {
@@ -17,9 +18,9 @@ trait Accessors
 
     public function __call($name, $arguments){
         $property = lcfirst(substr($name, 3));
-        if(substr($name, 0, 3) === 'get'){
+        if(str_starts_with($name, Constant::GET)){
             return $this->$property;
-        }elseif(substr($name, 0, 3) === 'set'){
+        }elseif(str_starts_with($name, Constant::SET)){
             $this->$property = $arguments[0];
         }
     }
