@@ -11,14 +11,18 @@ use ReflectionProperty;
 
 class TestAnnotation
 {
-    public function __construct(
-        #[CloneObject]
-        #[Get]
-        #[Set]
-        #[ToString]
-        private string $name,
-        private int $age
-    ) {
+    /**
+     * @param string $name
+     * @param int $age
+     */
+    public function __construct(#[CloneObject, Get, Set, ToString]
+                                private string $name, private int $age) {
+    }
+
+    public function setName(string $name): TestAnnotation
+    {
+        $this->name = $name;
+        return $this;
     }
 }
 
